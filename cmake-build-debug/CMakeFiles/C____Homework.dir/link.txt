@@ -1,0 +1,3 @@
+"D:\CLion\CLion 2020.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\C____Homework.dir/objects.a
+D:\min-gw\mingw32\bin\ar.exe cr CMakeFiles\C____Homework.dir/objects.a @CMakeFiles\C____Homework.dir\objects1.rsp
+D:\min-gw\mingw32\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\C____Homework.dir/objects.a -Wl,--no-whole-archive  -o C____Homework.exe -Wl,--out-implib,libC____Homework.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\C____Homework.dir\linklibs.rsp
