@@ -1,0 +1,3 @@
+D:/SILLBOX/C++__Homework/14/bigNumberCompare/cmake-build-debug/CMakeFiles/bigNumberCompare.dir
+D:/SILLBOX/C++__Homework/14/bigNumberCompare/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/SILLBOX/C++__Homework/14/bigNumberCompare/cmake-build-debug/CMakeFiles/rebuild_cache.dir

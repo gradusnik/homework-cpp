@@ -1,0 +1,3 @@
+"D:\CLion\CLion 2020.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\bigNumberCompare.dir/objects.a
+D:\min-gw\mingw32\bin\ar.exe cr CMakeFiles\bigNumberCompare.dir/objects.a @CMakeFiles\bigNumberCompare.dir\objects1.rsp
+D:\min-gw\mingw32\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\bigNumberCompare.dir/objects.a -Wl,--no-whole-archive  -o bigNumberCompare.exe -Wl,--out-implib,libbigNumberCompare.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\bigNumberCompare.dir\linklibs.rsp
