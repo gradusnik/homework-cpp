@@ -1,0 +1,5 @@
+Make a small text file words txt in which different words are arranged 
+sequentially separated by spaces and line breaks You can use any 
+English language words Develop a program that would search among these 
+words for the desired user and output the total number of repetitions of 
+this word 0 — if the word is not present in the file at all 
