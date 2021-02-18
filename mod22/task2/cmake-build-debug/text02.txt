@@ -1,0 +1,6 @@
+Develop the simplest text file viewer. At the beginning of the program, the user 
+enters the path to the text file that you want to open and view. The internals of the 
+file must be output to standard output. The program should work for any text files 
+in the TXT format, but you can also create your own separate file for the test. The
+main thing is that the file should be in English, in order to avoid problems with 
+encodings.

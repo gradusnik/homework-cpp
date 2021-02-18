@@ -9,7 +9,7 @@ int main() {
   std::cout << "which word would you like to seek... ";
   std::cin >> seekedWord;
 
-  file.open("D:\\SKILLBOX\\C++__Homework\\mod22\\task01.txt");
+  file.open("task01.txt");
   while (!file.eof()) {
     file >> curWord;
     if (curWord == seekedWord) ++numSeekedWord;
@@ -18,4 +18,7 @@ int main() {
 
   std::cout << "\"" << seekedWord << "\"" << " is used "
             << numSeekedWord << " times.";
+
+  std::cout << std::endl;
+  return 0;
 }
