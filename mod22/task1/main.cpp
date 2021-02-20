@@ -10,12 +10,16 @@ int main() {
   std::cin >> seekedWord;
 
   file.open("task01.txt");
-  while (!file.eof()) {
-    file >> curWord;
-    if (curWord == seekedWord) ++numSeekedWord;
+  if (!file.is_open()) {
+    std::cerr << "invalid file path" << std::endl;
+    return 1;
+  } else {
+    while (!file.eof()) {
+      file >> curWord;
+      if (curWord == seekedWord) ++numSeekedWord;
+    }
   }
   file.close();
-
   std::cout << "\"" << seekedWord << "\"" << " is used "
             << numSeekedWord << " times.";
 
