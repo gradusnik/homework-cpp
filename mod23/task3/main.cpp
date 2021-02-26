@@ -17,6 +17,7 @@ int main() {
       }
     }
     std::cout << "today you catch " << fishAmount << " pisces" << std::endl;
-  }
+    river.close(); basket.close();
+  } else std::cerr << "failure of opening files" << std::endl;
   return 0;
 }
