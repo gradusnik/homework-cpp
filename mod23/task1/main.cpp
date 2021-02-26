@@ -26,6 +26,6 @@ int main() {
       }
     }
     in_file.close();
-  }
+  } else std::cout << "failure of opening file\n";
   return 0;
 }
