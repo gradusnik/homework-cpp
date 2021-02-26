@@ -19,6 +19,7 @@ int main() {
       }
       pic << '\n';
     }
-  }
+    pic.close();
+  } else std::cerr << "failure of opening file\n";
   return 0;
 }
