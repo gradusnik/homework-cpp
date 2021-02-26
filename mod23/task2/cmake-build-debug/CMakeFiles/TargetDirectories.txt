@@ -1,0 +1,3 @@
+D:/SKILLBOX/C++__Homework/mod23/task2/cmake-build-debug/CMakeFiles/task2.dir
+D:/SKILLBOX/C++__Homework/mod23/task2/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/SKILLBOX/C++__Homework/mod23/task2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
