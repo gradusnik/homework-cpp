@@ -19,59 +19,36 @@ void enteringVec(vect &vector) {
   std::cin >> vector.y;
 }
 
-void addVectors() {
-  std::cout << "enter first vector: " << std::endl;
-  vect V1, V2, res;
-  enteringVec(V1);
-  std::cout << "enter second vector: " << std::endl;
-  enteringVec(V2);
-  res.x = V1.x + V2.x;
-  res.y = V1.y + V2.y;
+vect addVectors(vect &v1, vect &v2) {
+  vect res;
+  res.x = v1.x + v2.x;
+  res.y = v1.y + v2.y;
+  return res;
+}
+
+vect subtract(vect &v1, vect &v2) {
+  vect res;
+  res.x = v1.x - v2.x;
+  res.y = v1.y - v2.y;
+  return res;
   std::cout << "result vector is (" << res.x << "  " << res.y << ")" << std::endl;
 }
 
-void subtract() {
-  std::cout << "enter first vector: " << std::endl;
-  vect V1, V2, res;
-  enteringVec(V1);
-  std::cout << "enter second vector: " << std::endl;
-  enteringVec(V2);
-  res.x = V1.x - V2.x;
-  res.y = V1.y - V2.y;
-  std::cout << "result vector is (" << res.x << "  " << res.y << ")" << std::endl;
+vect multiplyScalar(vect &v, double s) {
+  vect res;
+  res.x = v.x * s;
+  res.y = v.y * s;
+  return res;
 }
 
-void multiplyScalar() {
-  vect V, res;
-  double S(0);
-  std::cout << "enter the vector: " << std::endl;
-  enteringVec(V);
-  std::cout << "enter the number: ";
-  std::cin >> S;
-  res.x = V.x * S;
-  res.y = V.y * S;
-  std::cout << "result vector is (" << res.x << "  " << res.y << ")" << std::endl;
-}
-
-void vectLength() {
-  vect V;
-  std::cout << "enter the vector: " << std::endl;
-  enteringVec(V);
-  double L(0);
-  std::cout << "vector length is " << vectLen(V) << std::endl;
-}
-
-void vectNormalize() {
-  vect V, nV;
-  std::cout << "enter the vector: " << std::endl;
-  enteringVec(V);
-  nV.x = V.x / vectLen(V);
-  nV.y = V.y / vectLen(V);
-  std::cout << "normalized vector: (" << nV.x << "  " << nV.y << ")" << std::endl;
+vect vectNormalize(vect &v) {
+  vect nv;
+  nv.x = v.x / vectLen(v);
+  nv.y = v.y / vectLen(v);
+  return nv;
 }
 
 int main() {
-  std::string operation;
   std::cout << "choose the operation(enter the number): 0 - add two vectors" << std::endl
             << "                                        1 - subtract vectors" << std::endl
             << "                                        2 - multiplying a vec on scalar" << std::endl
@@ -79,11 +56,39 @@ int main() {
             << "                                        4 - vec normalization" << std::endl;
   int n(-1);
   std::cin >> n;
-  if (n == 0) addVectors();
-  else if (n == 1) subtract();
-  else if (n == 2) multiplyScalar();
-  else if (n == 3) vectLength();
-  else if (n == 4) vectNormalize();
+  vect V1, V2, res;
+  double S;
+  if (n == 0) {
+    std::cout << "enter first vector: " << std::endl;
+    enteringVec(V1);
+    std::cout << "enter second vector: " << std::endl;
+    enteringVec(V2);
+    res = addVectors(V1, V2);
+    std::cout << "result vector is (" << res.x << "  " << res.y << ")" << std::endl;
+  } else if (n == 1) {
+    std::cout << "enter first vector: " << std::endl;
+    enteringVec(V1);
+    std::cout << "enter second vector: " << std::endl;
+    enteringVec(V2);
+    res = subtract(V1, V2);
+    std::cout << "result vector is (" << res.x << "  " << res.y << ")" << std::endl;
+  } else if (n == 2) {
+    std::cout << "enter the vector: " << std::endl;
+    enteringVec(V1);
+    std::cout << "enter the number: ";
+    std::cin >> S;
+    res = multiplyScalar(V1, S);
+    std::cout << "result vector is (" << res.x << "  " << res.y << ")" << std::endl;
+  } else if (n == 3) {
+    std::cout << "enter the vector: " << std::endl;
+    enteringVec(V1);
+    std::cout << "vector length is " << vectLen(V1) << std::endl;
+  } else if (n == 4) {
+    std::cout << "enter the vector: " << std::endl;
+    enteringVec(V1);
+    res = vectNormalize(V1);
+    std::cout << "normalized vector is (" << res.x << "  " << res.y << ")" << std::endl;
+  }
   else std::cerr << "no operation" << std::endl;
   return 0;
 }

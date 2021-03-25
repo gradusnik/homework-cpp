@@ -2,8 +2,16 @@
 #include <string>
 #include <vector>
 
+enum roomType {
+    BEDROOM,
+    KITCHEN,
+    BATHROOM,
+    KIDS_ROOM,
+    LIVING_ROOM
+};
+
 struct room {
-    std::string type;
+    roomType type;
     double square;
 };
 void fillRoom(room &room) {
@@ -15,11 +23,11 @@ void fillRoom(room &room) {
             << "                  4 - living room" << std::endl;
   int n(0);
   std::cin >> n;
-  if (n == 0) room.type = "bedroom";
-  else if (n == 1) room.type = "kitchen";
-  else if (n == 2) room.type = "bathroom";
-  else if (n == 3) room.type = "kids room";
-  else if (n == 4) room.type = "living room";
+  if (n == 0) room.type = BEDROOM;
+  else if (n == 1) room.type = KITCHEN;
+  else if (n == 2) room.type = BATHROOM;
+  else if (n == 3) room.type = KIDS_ROOM;
+  else if (n == 4) room.type = LIVING_ROOM;
   std::cout << "which square the room have: ";
   std::cin >> room.square;
 }
@@ -43,8 +51,13 @@ void fillFloor(floor &floor) {
   }
 }
 
+enum buildingType{
+    GARAGE,
+    BARN,
+    BATHHOUSE
+};
 struct building {
-    std::string type;
+    buildingType type;
     double square;
     bool furnace = false;
 };
@@ -55,10 +68,10 @@ void fillBuilding(building &building) {
             << "                  2 - bathhouse" << std::endl;
   int n(0);
   std::cin >> n;
-  if (n == 0) building.type = "garage";
-  else if (n == 1) building.type = "barn";
+  if (n == 0) building.type = GARAGE;
+  else if (n == 1) building.type = BARN;
   else if (n == 2) {
-    building.type = "bathhouse";
+    building.type = BATHHOUSE;
     std::cout << "does bathhouse have a furnace?(enter \'yes\' if does)";
     std::string answer;
     std::cin >> answer;
