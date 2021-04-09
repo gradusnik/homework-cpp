@@ -17,7 +17,7 @@ int trialRequest(std::string str, std::string &part1, std::string &part2) {
   return k;
 }
 
-bool checkPart1(std::string str) {
+bool checkNumber(std::string str) {
   int len = str.length();
   for (int i = 0; i < len; ++i) {
     if ((str[i] < '0' || str[i] > '9') && str[i] != '-') return false;
@@ -25,7 +25,7 @@ bool checkPart1(std::string str) {
   return true;
 }
 
-bool checkPart2(std::string str) {
+bool checkSurname(std::string str) {
   int len = str.length();
   for (int i = 0; i < len; ++i) {
     if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z')) return false;
@@ -33,33 +33,51 @@ bool checkPart2(std::string str) {
   return true;
 }
 
+void addToMap(std::map<std::string, std::string> &mainMap,
+              const std::string& number,
+              const std::string& surname,
+              std::map<std::string, std::vector<std::string>> &SurnameToNumber) {
+  mainMap.insert(std::pair<std::string, std::string>(number, surname));
+  SurnameToNumber[surname].push_back(number);
+}
+
+std::string numToSurname(std::map<std::string, std::string> &mainMap, std::string &number) {
+  std::map<std::string, std::string>::iterator elemPtr = mainMap.find(number);
+  if (elemPtr != mainMap.end()) {
+    return elemPtr->second;
+  }
+  return "NO number";
+}
+
+std::vector<std::string> numbers(std::map<std::string,std::vector<std::string>> nums,
+                                  const std::string& surname) {
+  std::map<std::string, std::vector<std::string>>::iterator elemPtr = nums.find(surname);
+  if (elemPtr != nums.end()) {
+    return elemPtr->second;
+  }
+  std::vector<std::string> noNumbers = {"no", "numbers"};
+  return noNumbers;
+}
+
 int main() {
   std::string request;
   std::map<std::string, std::string> telMap;
+  std::map<std::string, std::vector<std::string>> surnameToNumber;
   while (request != "-1") {
     std::cout << "enter the request: ";
     std::getline(std::cin, request);
     std::string part1, part2;
     int reqLen = trialRequest(request, part1, part2);
-    if (reqLen == 2 && checkPart1(part1) && checkPart2(part2)) {
-      telMap[part1] = part2;
-    } else if (reqLen == 1 && checkPart1(part1)) {
-      std::map<std::string, std::string>::iterator elemPtr = telMap.find(part1);
-      if (elemPtr != telMap.end()) {
-        std::cout << elemPtr->second << " has number you entered" << std::endl;
-      } else std::cout << "there are NO such number" << std::endl;
-    } else if (reqLen == 1 && checkPart2(part1)) {
-      std::vector<std::string> elems;
-      for (std::map<std::string, std::string>::iterator it = telMap.begin(); it != telMap.end(); ++it) {
-        if (it -> second == part1) elems.push_back(it -> first);
+    if (reqLen == 2 && checkNumber(part1) && checkSurname(part2)) {
+      addToMap(telMap, part1, part2, surnameToNumber);
+    } else if (reqLen == 1 && checkNumber(part1)) {
+      std::cout << numToSurname(telMap, part1) << std::endl;
+    } else if (reqLen == 1 && checkSurname(part1)) {
+      std::vector<std::string> answer = numbers(surnameToNumber, part1);
+      for (int i = 0; i < answer.size(); ++i) {
+        std::cout << answer[i] << " ";
       }
-      if (!elems.empty()) {
-        std::cout << "surname " << part1 << " abonents have following tels:" << std::endl;
-        for (int i = 0; i < elems.size(); ++i) {
-          std::cout << elems[i] << " ";
-        }
-        std::cout << std::endl;
-      } else std::cout << "there are NO such abonents" << std::endl;
+      std::cout << std::endl;
     }
     else std::cerr << "wrong request" << std::endl;
   }
