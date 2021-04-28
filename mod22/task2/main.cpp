@@ -1,24 +1,36 @@
 #include <iostream>
-#include <fstream>
+#include <string>
+#include <map>
+
+void addSurname(std::map<std::string, int> &baseMap, std::string& surname) {
+  std::map<std::string, int>::iterator elem = baseMap.find(surname);
+  if (elem != baseMap.end()) {
+    baseMap[surname]++;
+  } else {
+    baseMap[surname] = 1;
+  }
+}
+
+std::string getSurname(std::map<std::string , int> &baseMap) {
+  std::string surname = baseMap.begin()->first;
+  if (baseMap[surname] > 1) baseMap[surname]--;
+  else baseMap.erase(baseMap.begin());
+  return surname;
+}
 
 int main() {
-  std::string f_name;
-  std::cout << "enter the valid path to the file: ";
-  std::cin >> f_name;
-  std::ifstream textFile;
-  textFile.open(f_name, std::ios::binary);
-
-  if (textFile.is_open()) {
-    char buffer[100];
-    buffer[99] = '\0';
-    while (!textFile.eof()) {
-      textFile.read(buffer, sizeof(buffer) - 1);
-
-      if (textFile.eof()) {
-        buffer[textFile.gcount()] = '\0';
-      }
-      std::cout << buffer;
+  std::map<std::string, int> queue;
+  std::string request;
+  while (request != "-1") {
+    std::cout << "enter the request: ";
+    std::cin >> request;
+    if (request == "next") {
+      if (!queue.empty()) {
+        std::cout << getSurname(queue) << std::endl;
+      } else std::cout << "the queue is empty" << std::endl;
+    } else {
+      addSurname(queue, request);
     }
-  } else std::cout << "fail of opening file.";
+  }
   return 0;
 }

@@ -1,25 +1,51 @@
 #include <iostream>
-#include <vector>
+#include <string>
+#include <fstream>
 
-void swapvec(std::vector<int> &vec, int arr[]) {
-  for (int i = 0; i < 5; ++i) {
-    int t = arr[i];
-    arr[i] = vec[i];
-    vec[i] = t;
-  }
-}
+struct record {
+    std::string name;
+    std::string lastName;
+    std::string date;
+    int payment;
+};
 
 int main() {
-  std::vector<int> a = {1, 2, 3, 4, 5};
-  int b[] = {6, 7, 8, 9, 10};
-  swapvec(a, b);
-  for (int i = 0; i < 5; ++i) {
-    std::cout << a[i] << " ";
-  }
-  std::cout << std::endl;
-  for (int i = 0; i < 5; ++i) {
-    std::cout << b[i] << " ";
-  }
-  std::cout << std::endl;
+  std::fstream file("table.txt");
+  std::string operation;
+  std::cout << "enter the operation: ";
+  std::cin >> operation;
+  if (file.is_open()) {
+    if (operation == "list") {
+      record currRecord;
+      while (true) {
+        file >> currRecord.name;
+        if (file.eof()) break;
+        file >> currRecord.lastName;
+        file >> currRecord.date;
+        file >> currRecord.payment;
+        std::cout << currRecord.name << " "
+                  << currRecord.lastName << " "
+                  << currRecord.date << " "
+                  << currRecord.payment << std::endl;
+      }
+    } else if (operation == "add") {
+      record newRecord;
+      file.seekg(0, std::ios::end);
+      std::cout << file.tellg() << std::endl;
+      std::cout << "making new record..." << std::endl
+                << "enter the name: ";
+      std::cin >> newRecord.name;
+      file << newRecord.name << " ";
+      std::cout << "enter the last name: ";
+      std::cin >> newRecord.lastName;
+      file << newRecord.lastName << " ";
+      std::cout << "enter the date: ";
+      std::cin >> newRecord.date;
+      file << newRecord.date << " ";
+      std::cout << "enter the payment: ";
+      std::cin >> newRecord.payment;
+      file << newRecord.payment << "\n";
+    } else std::cerr << "invalid operation" << std::endl;
+  } else std::cerr << "file not found" << std::endl;
   return 0;
 }

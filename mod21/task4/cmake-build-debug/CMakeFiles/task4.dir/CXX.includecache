@@ -6,7 +6,15 @@
 
 #IncludeRegexTransform: 
 
-D:/SILLBOX/C++__Homework/mod21/task4/main.cpp
+D:/SKILLBOX/C++__Homework/mod24/task4/main.cpp
 iostream
+-
+string
+-
+cstdlib
+-
+ctime
+-
+fstream
 -
 

@@ -6,7 +6,9 @@
 
 #IncludeRegexTransform: 
 
-D:/SILLBOX/C++__Homework/mod21/task3/main.cpp
+D:/SKILLBOX/C++__Homework/mod24/task3/main.cpp
 iostream
+-
+cmath
 -
 

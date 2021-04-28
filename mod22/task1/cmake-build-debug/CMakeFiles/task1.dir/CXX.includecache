@@ -6,9 +6,13 @@
 
 #IncludeRegexTransform: 
 
-D:/SKILLBOX/C++__Homework/mod22/task1/main.cpp
+D:/SKILLBOX/C++__Homework/mod25/task1/main.cpp
 iostream
 -
-fstream
+string
+-
+vector
+-
+map
 -
 

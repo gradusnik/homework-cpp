@@ -7,14 +7,19 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+      <configuration PROFILE_NAME="Dimgr_debug" CONFIG_NAME="Debug" TOOLCHAIN_NAME="MinGW" ENABLED="true" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab1a26d-25b6-4056-bea8-355d99e271a4" name="Default Changelist" comment="">
+    <list default="true" id="a447bb7e-83f0-48cf-9202-4f10d0b214c4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../mod23/task1/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../mod23/task1/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mod23/task2/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../mod23/task2/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mod23/task3/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../mod23/task3/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mod23/task4/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../mod23/task4/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mod23/task4/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../mod23/task4/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mod23/task4/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../mod23/task4/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mod24/task4/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../mod24/task4/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/task1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/task1.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,11 +29,11 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Dimgr_debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1ocYrDvskRUhWttFDSjzUdNLZQ7" />
+  <component name="ProjectId" id="1qU2RnbM6m9eXDe63WZRXlZAnzt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -37,12 +42,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../c++/16.3" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
   </component>
   <component name="RunManager">
-    <configuration name="task1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="task1" TARGET_NAME="task1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="task1" RUN_TARGET_NAME="task1">
+    <configuration name="task1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="task1" TARGET_NAME="task1" CONFIG_NAME="Dimgr_debug" RUN_TARGET_PROJECT_NAME="task1" RUN_TARGET_NAME="task1">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -51,15 +59,20 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="eab1a26d-25b6-4056-bea8-355d99e271a4" name="Default Changelist" comment="" />
-      <created>1613587543068</created>
+      <changelist id="a447bb7e-83f0-48cf-9202-4f10d0b214c4" name="Default Changelist" comment="" />
+      <created>1617119842221</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1613587543068</updated>
-      <workItem from="1613587545047" duration="1480000" />
-      <workItem from="1613665049990" duration="22000" />
-      <workItem from="1613665655957" duration="2079000" />
-      <workItem from="1613847981782" duration="349000" />
+      <updated>1617119842221</updated>
+      <workItem from="1617119844130" duration="1757000" />
+      <workItem from="1617204431516" duration="13383000" />
+      <workItem from="1617432496626" duration="171000" />
+      <workItem from="1617643501861" duration="2705000" />
+      <workItem from="1617731776949" duration="359000" />
+      <workItem from="1617990913776" duration="156000" />
+      <workItem from="1617991720778" duration="4885000" />
+      <workItem from="1617997573097" duration="590000" />
+      <workItem from="1618030689734" duration="23000" />
     </task>
     <servers />
   </component>
