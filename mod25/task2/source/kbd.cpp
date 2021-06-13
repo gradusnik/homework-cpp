@@ -1,4 +1,4 @@
-//#include "kbd.h"
+#include "kbd.h"
 #include <iostream>
 
 void inputNumbers(double* nums) {

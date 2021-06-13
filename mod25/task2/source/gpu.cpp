@@ -1,4 +1,4 @@
-//#include "gpu.h"
+#include "gpu.h"
 #include <iostream>
 
 void display(double* nums) {

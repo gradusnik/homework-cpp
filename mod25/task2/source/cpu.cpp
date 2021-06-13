@@ -1,4 +1,4 @@
-//#include "cpu.h"
+#include "cpu.h"
 #include <iostream>
 
 void compute(double* nums) {

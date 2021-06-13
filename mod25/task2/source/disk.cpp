@@ -1,4 +1,4 @@
-//#include "disk.h"
+#include "disk.h"
 #include <fstream>
 #include <iostream>
 
