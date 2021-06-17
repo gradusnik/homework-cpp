@@ -5,14 +5,12 @@
 int main() {
   std::srand(std::time(nullptr));
   Player player;
-  for (int i = 0; i < 5; ++i) {
-    player.tracks[i].setValues();
-  }
-  player.tracks[0].setName("Filip Kirkorov");
-  player.tracks[1].setName("Nikolay Baskov");
-  player.tracks[2].setName("Egor Krid");
-  player.tracks[3].setName("Timati");
-  player.tracks[4].setName("Morgenstern");
+
+  player.addTrack("Filip Kirkorov");
+  player.addTrack("Nikolay Baskov");
+  player.addTrack("Egor Krid");
+  player.addTrack("Timati");
+  player.addTrack("Morgenstern");
 
 
   std::string command;

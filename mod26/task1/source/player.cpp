@@ -1,7 +1,12 @@
 #include "player.h"
 #include <iostream>
 
-
+void Player::addTrack(std::string trackName) {
+  Track tempTrack;
+  tempTrack.setValues();
+  tempTrack.setName(trackName);
+  tracks.push_back(tempTrack);
+}
 
 int Player::findTrack(std::string presumedName) {
   for (int i = 0; i < 5; ++i) {

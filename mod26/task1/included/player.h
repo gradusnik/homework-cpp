@@ -1,5 +1,6 @@
 #pragma once
 #include "tracks.h"
+#include <vector>
 
 enum Indicator {
     STOPPED,
@@ -12,7 +13,8 @@ class Player {
     Indicator indicator = STOPPED;
     int currentTrack = 0;
 public:
-    Track tracks[5];
+    std::vector<Track> tracks;
+    void addTrack(std::string trackName);
     int findTrack(std::string presumedName);
     void display();
     void setCurrentTrack(int n);
