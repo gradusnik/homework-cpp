@@ -60,7 +60,9 @@ public:
 };
 
 std::vector<Order> orders;
-std::mutex access;
+std::mutex accForOrders;
+std::mutex accForKitchen;
+std::mutex accForCourier;
 
 void gettingOrders() {
   std::srand(std::time(nullptr));
@@ -69,10 +71,10 @@ void gettingOrders() {
     std::this_thread::sleep_for(std::chrono::seconds(pause));
     int n = std::rand() % 5;
     Order order(intToDish(n));
-    access.lock();
+    accForOrders.lock();
     orders.push_back(order);
     std::cout << order.message(PENDING) << std::endl;
-    access.unlock();
+    accForOrders.unlock();
   }
 }
 
@@ -80,20 +82,20 @@ void kitchen() {
   std::srand(std::time(nullptr));
   int ind(0);
   while (true) {
-    access.lock();
+    accForKitchen.lock();
     if (ind < orders.size()) {
       orders[ind].setStatus(COOKING);
       std::cout << orders[ind].message(COOKING) << std::endl;
-      access.unlock();
+      accForKitchen.unlock();
       int cooking = std::rand() % 11 + 5;
       std::this_thread::sleep_for(std::chrono::seconds(cooking));
-      access.lock();
+      accForKitchen.lock();
       orders[ind].setStatus(COOKED);
       std::cout << orders[ind].message(COOKED) << std::endl;
-      access.unlock();
+      accForKitchen.unlock();
       ind++;
     } else {
-      access.unlock();
+      accForKitchen.unlock();
       std::this_thread::sleep_for(std::chrono::seconds(10));
     }
   }
@@ -105,22 +107,22 @@ void courier() {
   int plan(4);
   int delivering(15);
   while (count < plan) {
-    access.lock();
+    accForCourier.lock();
     if (ind < orders.size()) {
       if (orders[ind].getStatus() == COOKED) {
         orders[ind].setStatus(DELIVERING);
         std::cout << orders[ind].message(DELIVERING) << std::endl;
-        access.unlock();
+        accForCourier.unlock();
         ind++;
         count++;
         if (count == plan) break;
         std::this_thread::sleep_for(std::chrono::seconds(delivering));
       } else{
-        access.unlock();
+        accForCourier.unlock();
         std::this_thread::sleep_for(std::chrono::seconds(delivering));
       }
     } else {
-      access.unlock();
+      accForCourier.unlock();
       std::this_thread::sleep_for(std::chrono::seconds(delivering));
     }
   }
