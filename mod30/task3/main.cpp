@@ -5,14 +5,14 @@
 
 using std::string;
 
-string mGetReq(std::vector<std::pair<string, string>> params, string& url) {
+string mGetReq(std::vector<cpr::Pair> params, string& url) {
   if (!params.empty()) {
-    url += '?';
+    url += "get?";
     auto iter = params.begin();
-    url += iter->first + '=' + iter->second;
+    url += iter->key + '=' + iter->value;
     ++iter;
     while (iter != params.end()) {
-      url += '&' + iter->first + '=' + iter->second;
+      url += '&' + iter->key + '=' + iter->value;
       ++iter;
     }
   }
@@ -21,38 +21,33 @@ string mGetReq(std::vector<std::pair<string, string>> params, string& url) {
   return response.text;
 }
 
-string mPostReq(std::vector<std::pair<string, string>> params, string& url) {
-  url += "/post";
+string mPostReq(std::vector<cpr::Pair> params, string& url) {
+  url += "post";
   cpr::Response response;
   if (!params.empty()) {
-    for (int i = 0; i < params.size(); ++i) {
-      response = cpr::Post(cpr::Url(url),
-                           cpr::Payload({{params[i].first.c_str(), params[i].second.c_str()}}));
-    }
+    response = cpr::Post(cpr::Url(url),
+                         cpr::Payload(params.begin(), params.end()));
   }
-//  cpr::Response response = cpr::Post(cpr::Url(url),
-//                                     cpr::Payload(params));
   return response.text;
 }
 
 int main() {
 
-  std::vector<std::pair<string, string>> params;
-
-  string url = "http://httpbin.org";
-  string paramKey, paramValue;
-  while (paramKey != "get" && paramKey != "post") {
+  std::vector<cpr::Pair> params;
+  cpr::Pair pair("", "");
+  string url = "http://httpbin.org/";
+  while (pair.key != "get" && pair.key != "post") {
     std::cout << "enter next parameter key: ";
-    std::cin >> paramKey;
-    if (paramKey != "get" && paramKey != "post") {
+    std::cin >> pair.key;
+    if (pair.key != "get" && pair.key != "post") {
       std::cout << "enter next parameter value: ";
-      std::cin >> paramValue;
-      params.push_back({paramKey, paramValue});
+      std::cin >> pair.value;
+      params.push_back(pair);
     }
   }
 
-  if (paramKey == "get") std::cout << mGetReq(params, url);
-  if (paramKey == "post") std::cout << mPostReq(params, url);
+  if (pair.key == "get") std::cout << mGetReq(params, url);
+  if (pair.key == "post") std::cout << mPostReq(params, url);
 
   return 0;
 }
