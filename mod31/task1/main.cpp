@@ -67,6 +67,7 @@ public:
       }
     }
     ~Shared_ptr_toy() {
+      *rfs_num--;
       if (*rfs_num == 0) {
         delete _ptr_;
         delete rfs_num;
