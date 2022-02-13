@@ -1,0 +1,37 @@
+{
+  "dont look up": {
+    "director" : "Adam McKay",
+    "cast" : "Leonardo DiCaprio, Jennifer Lawrence, Meryl Streep, Cate Blanchett, Rob Morgan, Jonah Hill, Mark Rylance, Tyler Perry, Timmothee Chalamet, Ariana Grande, Scott Mescudi, Michael Chiklis, Melany Lynskey, Himesh Patel, Tomer Sisley, Paul Guilfoyle, Robert Joy",
+    "writer" : "Adam McKay, David Sirota",
+    "genres" : "Scii-Fi Movies, Comedies, Dramas",
+    "maturityRating" :  18
+  },
+  "munich the edge of war" : {
+    "director" : "Christian Schwochow",
+    "cast" : "George MacKay, Jannis Niewohner, Jeremy Irons, Robert Bathurst, Jessica Brown Findlay, August Diehl, Sandra Huller, Alex Jennings, Ulrich Matthes, Liv Lisa Fries",
+    "writer" : "Ben Power",
+    "genres" : "Spy Movies, British, Dramas",
+    "maturityRating" : 12
+  },
+  "The Unforgivable" : {
+    "director" : "Nora Fingscheidt",
+    "cast" : "Sandra Bullock, Vincent D'Onofrio, Viola Davis, Jon Bernthal, Richard Thomas, Linda Emond, Aisling Franciosi, Rob Morgan, Emma Nelson",
+    "writer" : "Peter Craig, Hillary Seitz, Courtenay Miles",
+    "genres" : "Crime Movies, Dramas",
+    "maturityRating" : 18
+  },
+  "Body of Lies" : {
+    "director" : "Ridley Scott",
+    "cast" : "Leonardo DiCaprio, Russell Crowe, Mark Strong, Golshiften Farahani, Oscar Isaac, Ali Suliman, Alon Aboutboul, Vince Colosimo, Simon McBurney, Kais Nashif, Michael Gaston",
+    "writer" : "William Monahan",
+    "genres" : "Spy Movies, Dramas, Action & Adventure",
+    "maturityRating" : 16
+  },
+  "How I Fell in Love with a Gangster" : {
+    "director" : "Maciej Kawulski",
+    "cast" : "Tomasz Wlosok, Antoni Krolikowski, Agnieszka Grochowska, Krystyna Janda, Sebastian Fabijanski, Magdalena Lamparska, Julia Wieniawa-Narkiewicz, Eryk Lubos, Dawid Ogrodnik, Janusz Chabior",
+    "writer" : "Maciej Kawulski, Krzysztof Gureczny",
+    "genres" : "Polish, Crime Movies, Dramas",
+    "maturityRating" : 18
+  }
+}
