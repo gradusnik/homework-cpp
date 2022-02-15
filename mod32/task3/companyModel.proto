@@ -1,0 +1,9 @@
+syntax = "proto2";
+message CompanyModel
+{
+  required int32 estYear = 1;
+  required string juristicAddr = 2;
+  required string name = 3;
+  optional string sortOfActivity = 4;
+  optional bool extEconomActivity = 5;
+}
