@@ -8,7 +8,7 @@
 
 #define SETREZZ(r) QString res = "error"; \
                     if(var2 == 0 or !v1ok or !v2ok) {res = "error";} \
-                    else {(r);res = QString::number(rezz);}          \
+                    else { (r) ; res = QString::number(rezz); }      \
                     display(res);
 
 #ifndef CALFORINT02QXYWZI_H
